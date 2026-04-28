@@ -1,0 +1,373 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "测试创建",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/create/test": {
+      "post": {
+        "summary": "测试创建",
+        "tags": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "testV": {
+                    "type": "string",
+                    "description": "测试值"
+                  },
+                  "num": {
+                    "type": "integer",
+                    "description": "数字"
+                  }
+                },
+                "required": [
+                  "testV",
+                  "num"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "description": "状态码"
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": "提示信息"
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "响应数据",
+                      "properties": {
+                        "current_page": {
+                          "type": "integer",
+                          "description": "当前页码"
+                        },
+                        "last_page": {
+                          "type": "integer",
+                          "description": "最后一页页码"
+                        },
+                        "per_page": {
+                          "type": "integer",
+                          "description": "每页条数"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "description": "总条数"
+                        },
+                        "from": {
+                          "type": "integer",
+                          "description": "起始序号"
+                        },
+                        "to": {
+                          "type": "integer",
+                          "description": "结束序号"
+                        },
+                        "first_page_url": {
+                          "type": "string",
+                          "description": "第一页URL"
+                        },
+                        "last_page_url": {
+                          "type": "string",
+                          "description": "最后一页URL"
+                        },
+                        "next_page_url": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "下一页URL"
+                        },
+                        "prev_page_url": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "上一页URL"
+                        },
+                        "path": {
+                          "type": "string",
+                          "description": "请求路径"
+                        },
+                        "links": {
+                          "type": "array",
+                          "description": "分页链接",
+                          "items": {
+                            "type": "object"
+                          }
+                        },
+                        "data": {
+                          "type": "array",
+                          "description": "商品列表",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer",
+                                "description": "商品ID"
+                              },
+                              "spu_number": {
+                                "type": "string",
+                                "description": "SPU编号"
+                              },
+                              "source_product_code": {
+                                "type": "string",
+                                "description": "来源商品编码"
+                              },
+                              "source_type": {
+                                "type": "integer",
+                                "description": "来源类型"
+                              },
+                              "source_name": {
+                                "type": "string",
+                                "description": "来源名称"
+                              },
+                              "season": {
+                                "type": "string",
+                                "description": "季节"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "商品全名"
+                              },
+                              "display_name": {
+                                "type": "string",
+                                "description": "展示名称"
+                              },
+                              "subtitle": {
+                                "type": "string",
+                                "description": "副标题"
+                              },
+                              "market_price": {
+                                "type": "string",
+                                "description": "市场价"
+                              },
+                              "discount_price": {
+                                "type": "integer",
+                                "description": "折扣价（分）"
+                              },
+                              "gender_appropriate": {
+                                "type": "integer",
+                                "description": "适用性别: 1男 2女"
+                              },
+                              "status": {
+                                "type": "integer",
+                                "description": "状态"
+                              },
+                              "check_status": {
+                                "type": "integer",
+                                "description": "审核状态"
+                              },
+                              "img_url": {
+                                "type": "string",
+                                "description": "主图URL"
+                              },
+                              "category_leaf_id": {
+                                "type": "integer",
+                                "description": "叶子分类ID"
+                              },
+                              "first_cid": {
+                                "type": "integer",
+                                "description": "一级分类ID"
+                              },
+                              "second_cid": {
+                                "type": "integer",
+                                "description": "二级分类ID"
+                              },
+                              "third_cid": {
+                                "type": "integer",
+                                "description": "三级分类ID"
+                              },
+                              "fourth_cid": {
+                                "type": "integer",
+                                "description": "四级分类ID"
+                              },
+                              "first_cname": {
+                                "type": "string",
+                                "description": "一级分类名称"
+                              },
+                              "second_cname": {
+                                "type": "string",
+                                "description": "二级分类名称"
+                              },
+                              "third_cname": {
+                                "type": "string",
+                                "description": "三级分类名称"
+                              },
+                              "fourth_cname": {
+                                "type": "string",
+                                "description": "四级分类名称"
+                              },
+                              "qf_video_id": {
+                                "type": "integer",
+                                "description": "视频ID"
+                              },
+                              "qf_video_url": {
+                                "type": "string",
+                                "description": "视频URL"
+                              },
+                              "qf_brand_id": {
+                                "type": "integer",
+                                "description": "品牌ID"
+                              },
+                              "qf_brand_name": {
+                                "type": "string",
+                                "description": "品牌名称"
+                              },
+                              "qf_freight_id": {
+                                "type": "integer",
+                                "description": "运费模板ID"
+                              },
+                              "attr_required_num": {
+                                "type": "integer",
+                                "description": "必填属性数"
+                              },
+                              "attr_required_filled_num": {
+                                "type": "integer",
+                                "description": "已填必填属性数"
+                              },
+                              "attr_optional_num": {
+                                "type": "integer",
+                                "description": "可选属性数"
+                              },
+                              "attr_optional_filled_num": {
+                                "type": "integer",
+                                "description": "已填可选属性数"
+                              },
+                              "qf_freight_template_name": {
+                                "type": "string",
+                                "description": "运费模板名称"
+                              },
+                              "product_keyword": {
+                                "type": "string",
+                                "description": "商品关键词"
+                              },
+                              "size_chart_code": {
+                                "type": "string",
+                                "description": "尺码表编码"
+                              },
+                              "last_sync_time": {
+                                "type": "integer",
+                                "description": "最后同步时间（时间戳）"
+                              },
+                              "first_offer_time": {
+                                "type": "integer",
+                                "description": "首次上架时间（时间戳）"
+                              },
+                              "first_publish_time": {
+                                "type": "integer",
+                                "description": "首次发布时间（时间戳）"
+                              },
+                              "ban_publish_flag": {
+                                "type": "integer",
+                                "description": "禁止发布标记: 0否 1是"
+                              },
+                              "create_time": {
+                                "type": "integer",
+                                "description": "创建时间（时间戳）"
+                              },
+                              "update_time": {
+                                "type": "integer",
+                                "description": "更新时间（时间戳）"
+                              },
+                              "delete_time": {
+                                "type": "integer",
+                                "nullable": true,
+                                "description": "删除时间（时间戳）"
+                              },
+                              "category_recommend_id": {
+                                "type": "string",
+                                "description": "推荐分类ID"
+                              },
+                              "sku_stat": {
+                                "type": "object",
+                                "description": "SKU统计",
+                                "properties": {
+                                  "qf_product_id": {
+                                    "type": "integer",
+                                    "description": "商品ID"
+                                  },
+                                  "first_spec_cnt": {
+                                    "type": "integer",
+                                    "description": "第一规格数量"
+                                  },
+                                  "second_spec_cnt": {
+                                    "type": "integer",
+                                    "description": "第二规格数量"
+                                  },
+                                  "third_spec_cnt": {
+                                    "type": "integer",
+                                    "description": "第三规格数量"
+                                  },
+                                  "spec_name_first": {
+                                    "type": "string",
+                                    "description": "第一规格名称"
+                                  },
+                                  "spec_name_second": {
+                                    "type": "string",
+                                    "description": "第二规格名称"
+                                  },
+                                  "spec_name_third": {
+                                    "type": "string",
+                                    "description": "第三规格名称"
+                                  },
+                                  "open_cnt": {
+                                    "type": "string",
+                                    "description": "开启SKU数"
+                                  },
+                                  "close_cnt": {
+                                    "type": "string",
+                                    "description": "关闭SKU数"
+                                  }
+                                }
+                              },
+                              "img_stat": {
+                                "type": "object",
+                                "description": "图片统计",
+                                "properties": {
+                                  "qf_product_id": {
+                                    "type": "integer",
+                                    "description": "商品ID"
+                                  },
+                                  "main_img_cnt": {
+                                    "type": "string",
+                                    "description": "主图数量"
+                                  },
+                                  "main_img_select_cnt": {
+                                    "type": "string",
+                                    "description": "已选主图数量"
+                                  },
+                                  "detail_img_cnt": {
+                                    "type": "string",
+                                    "description": "详情图数量"
+                                  }
+                                }
+                              },
+                              "publish_cnt": {
+                                "type": "integer",
+                                "description": "发布次数"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
